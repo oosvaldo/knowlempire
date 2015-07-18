@@ -56,8 +56,8 @@ function genHtml() {
 
 function genJs() {
 	return gulp.src(jss)
-	.pipe(concat('app.js'))
 	.pipe(browserify())
+	.pipe(concat('app.js'))
 	.pipe(babel())
 	//.pipe(uglify())
 	.pipe(gulp.dest('public/'))
