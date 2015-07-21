@@ -1,5 +1,3 @@
-require('./knowl/knowl.js');
-//require('../quest/quest.js');
-$.ready(function(event) { 
+require('./knowl/knowl.js')
+require('./map/map.js')
 
-})
