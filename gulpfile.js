@@ -11,7 +11,7 @@ var concat  = require('gulp-concat')
 var cntcss 	= require('gulp-concat-css')
 
 var jss 	= 'app/app.js'
-var htmls   = ['app/header.html','app/map/map.html','app/footer.html']
+var htmls   = ['app/header.html','app/footer.html']
 var csss 	= ['app/**/*.styl', 'app.styl']
 
  
