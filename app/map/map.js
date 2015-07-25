@@ -9,21 +9,6 @@ class Map {
 		this.happy 		= happy
 	}
 
-	__initEvents() {
-		$('.map > img').draggable({
-			start : function(){
-				console.log('start')
-			},
-			stop  : function(){
-				console.log('Stop')
-			},
-			containment : "parent"
-		})
-		$('.map > img').on('click', function(){
-			console.log($(this).attr('src'))
-		})
-	}
-
 	render(cont = '.content') {
 		var tmp =`
 			<section class="map">
@@ -41,9 +26,8 @@ class Map {
 
 				</div>
 		</section>`
-
 		$(cont).html(tmp)
-		this.__initEvents()
+		app.my_build.renderBuilds()
 	}
 }
 

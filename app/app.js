@@ -1,7 +1,7 @@
 window.app = {}
 
-require('./map/map.js')
 require('./map/build.js')
+require('./map/map.js')
 require('./ranking/rank.js')
 
 var $ = require('jquery')
