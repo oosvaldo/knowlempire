@@ -32,4 +32,3 @@ class Map {
 }
 
 app.my_map = new Map(10,15,20)
-//app.my_map.render('.content')

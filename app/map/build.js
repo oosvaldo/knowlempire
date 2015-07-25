@@ -4,19 +4,20 @@ class Build {
 
 	getMyBuilds() {
 		this.builds = [
-			{name : 'Museo', img : 'public/img/logo.png', cat : 'math', happy : 50, level : 2, power : -20, pos : {x : 10, y : 20}},
-			{name : 'Hospital', img : 'public/img/logo.png', cat : 'math', happy : 250, level : 2, power : -20, pos : {x : 10, y : 20}},
-			{name : 'Estadio', img : 'public/img/logo.png', cat : 'math', happy : 350, level : 2, power : -20, pos : {x : 10, y : 20}},
-			{name : 'Cine', img : 'public/img/logo.png', cat : 'math', happy : 50, level : 2, power : -20, pos : {x : 10, y : 20}},
-			{name : 'Escuela', img : 'public/img/logo.png', cat : 'all', happy : 30, level : 2, power : -20, pos : {x : 10, y : 20}},
-			{name : 'Zoo', img : 'public/img/logo.png', cat : 'zoo', happy : 50, level : 2, power : -20, pos : {x : 10, y : 20}}
+			{name : 'Museo', img : 'public/img/logo.png', cat : 'math', happy : 50, level : 2, power : -20, pos : {x : 0, y : 135}},
+			{name : 'Hospital', img : 'public/img/logo.png', cat : 'math', happy : 250, level : 2, power : -20, pos : {x : 300, y : 245}},
+			{name : 'Estadio', img : 'public/img/logo.png', cat : 'math', happy : 350, level : 2, power : -20, pos : {x : 600, y : 100}},
+			{name : 'Cine', img : 'public/img/logo.png', cat : 'math', happy : 50, level : 2, power : -20, pos : {x : 400, y : 300}},
+			{name : 'Escuela', img : 'public/img/logo.png', cat : 'all', happy : 30, level : 2, power : -20, pos : {x : 100, y : 200}},
+			{name : 'Zoo', img : 'public/img/logo.png', cat : 'zoo', happy : 50, level : 2, power : -20, pos : {x : 500, y : 0}}
 		]
 		this.elem = '.map .map-area > img'
 		this.container = '.map .map-area'
 	}
 
 	__initEvents() {
-		$(this.elem).draggable({
+		let self = this 
+		$(self.elem).draggable({
 			start : function(){
 				console.log('start')
 			},
@@ -25,8 +26,8 @@ class Build {
 			},
 			containment : "parent"
 		})
-		$(this.elem).on('click', function(){
-			console.log($(this).attr('src'))
+		$(self.elem).on('click', function(){
+			self.renderBuild($(this).attr('data-name'))
 		})
 	}
 
@@ -40,7 +41,7 @@ class Build {
 	renderBuilds(cont = this.container) {
 		let tmp = ''
 		$.each(this.builds, function(index, build) {
-			tmp += `<img src="${build.img}" style='left:${build.pos.x}px;top:${build.pos.y}px'>`
+			tmp += `<img src="${build.img}" data-name="${build.name}" style='left:${build.pos.x}px;top:${build.pos.y}px'>`
 		})
 		$(cont).html(tmp)
 		this.__initEvents()
