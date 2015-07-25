@@ -10,7 +10,7 @@ var concat 	= require('gulp-concat')
 var browserify = require('gulp-browserify')
 
 var jss 	= 'app/app.js'
-var htmls 	= ['app/header.html','app/map/map.html','app/footer.html']
+var htmls 	= ['app/header.html','app/map/map.html','app/build/build.html','app/footer.html']
 var csss 	= ['app/**/*.styl', 'app.styl']
 
 gulp.task('html', function() {
