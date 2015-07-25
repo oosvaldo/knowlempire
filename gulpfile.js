@@ -7,11 +7,9 @@ var watchify = require('watchify');
 var babel = require('babelify');
 var jade  = require('gulp-jade')
 var stylus 	= require('gulp-stylus')
-var concat  = require('gulp-concat')
-var cntcss 	= require('gulp-concat-css')
+var cntcss  = require('gulp-concat-css')
 
 var jss 	= 'app/app.js'
-var htmls   = ['app/header.html','app/footer.html']
 var csss 	= ['app/**/*.styl', 'app.styl']
 
  
@@ -40,14 +38,6 @@ function compile(watch) {
  
 function watch() {
   return compile(true);
-};
-
-function genHtml() {
-  return gulp.src(htmls)
-  .pipe(concat('index.html'))
-  //.pipe(jade())
-  //.pipe(minhtml())
-  .pipe(gulp.dest('public/'))
 }
 
 
@@ -61,12 +51,8 @@ function genCss() {
  
 gulp.task('js', function() { return compile(false); });
 gulp.task('js', function() { return watch(); });
- 
- gulp.task('html', function() {
-  return genHtml()
- });
 
-gulp.task('update', ['js']);
+gulp.task('update', ['css','js']);
 
 // CSS TASKS
 gulp.task('css', function() {
