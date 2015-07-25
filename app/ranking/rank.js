@@ -1,7 +1,5 @@
 var $ = require('jquery')
 
-var my_rank = {}
-
 class Rank {
 	constructor() {
 		this.friends = []
@@ -40,10 +38,4 @@ class Rank {
 	}
 }
 
-my_rank = new Rank()
-$(document).ready(function() { 
-	$('.menu-knowl').on('click', function() {
-		my_rank.render()
-	})
-	
-})
+app.my_rank = new Rank()

@@ -1,8 +1,6 @@
-window.$ = require('jquery')
+var $ = require('jquery')
 require('jquery-ui/draggable')
 require('jquery-ui/droppable')
-
-var my_map = null 
 
 class Map {
 	constructor(gold, power, happy) {
@@ -10,7 +8,7 @@ class Map {
 		this.power 		= power
 		this.happy 		= happy
 	}
-	
+
 	__initEvents() {
 		$('.map > img').draggable({
 			start : function(){
@@ -26,8 +24,8 @@ class Map {
 		})
 	}
 
-	render(container) {
-		var template =`
+	render(cont = '.content') {
+		var tmp =`
 			<section class="map">
 				<button>Buildings</button>
 				<h3>LEVEL 3</h3>
@@ -39,18 +37,15 @@ class Map {
 						<li>power: ${this.power}</li>
 					</ul>
 				</div>
-				<img src="public/img/logo.png">	
-				<img src="public/img/logo.png">	
-				<img src="public/img/logo.png">	
-				<img src="public/img/logo.png">	
-				<img src="public/img/logo.png">	
-				<img src="public/img/logo.png">	
+				<div class="map-area">
+
+				</div>
 		</section>`
 
-		$(container).html(template)
+		$(cont).html(tmp)
 		this.__initEvents()
 	}
 }
 
-var my_map = new Map(10,15,20)
-my_map.render('.content')
+app.my_map = new Map(10,15,20)
+//app.my_map.render('.content')
