@@ -1,3 +1,4 @@
-require('./knowl/knowl.js')
+require('./ranking/rank.js')
 require('./map/map.js')
+
 
