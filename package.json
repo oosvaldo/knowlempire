@@ -2,7 +2,8 @@
   "dependencies": {
     "body-parser": "^1.13.2",
     "express": "^4.13.0",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5"
   },
   "devDependencies": {
     "babelify": "^6.1.3",
