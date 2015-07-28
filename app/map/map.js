@@ -31,4 +31,4 @@ class Map {
 	}
 }
 
-app.my_map = new Map(10,15,20)
+app.mymap = new Map(10,15,20)

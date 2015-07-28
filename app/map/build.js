@@ -3,7 +3,10 @@ var $ = require('jquery')
 class Build {
 
 	getMyBuilds() {
-		this.builds = [
+		this.elem 		= '.map .map-area > img'
+		this.container 	= '.map .map-area'
+
+		this.builds 	= [
 			{name : 'Museo', img : 'public/img/logo.png', cat : 'math', happy : 50, level : 2, power : -20, pos : {x : 0, y : 135}},
 			{name : 'Hospital', img : 'public/img/logo.png', cat : 'math', happy : 250, level : 2, power : -20, pos : {x : 300, y : 245}},
 			{name : 'Estadio', img : 'public/img/logo.png', cat : 'math', happy : 350, level : 2, power : -20, pos : {x : 600, y : 100}},
@@ -11,8 +14,6 @@ class Build {
 			{name : 'Escuela', img : 'public/img/logo.png', cat : 'all', happy : 30, level : 2, power : -20, pos : {x : 100, y : 200}},
 			{name : 'Zoo', img : 'public/img/logo.png', cat : 'zoo', happy : 50, level : 2, power : -20, pos : {x : 500, y : 0}}
 		]
-		this.elem = '.map .map-area > img'
-		this.container = '.map .map-area'
 	}
 
 	__initEvents() {

@@ -38,4 +38,4 @@ class Rank {
 	}
 }
 
-app.my_rank = new Rank()
+app.myrank = new Rank()
